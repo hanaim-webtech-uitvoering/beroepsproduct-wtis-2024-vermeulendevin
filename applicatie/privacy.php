@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <a href="index.html">Pizzeria Sol Machina</a>
+    <a href="index.php">Pizzeria Sol Machina</a>
 </header>
 <main>
     <section class="privacy-policy">

@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <a href="index.html">Pizzeria Sol Machina</a>
+    <a href="index.php">Pizzeria Sol Machina</a>
     <nav>
         <ul>
             <li><a href="/untitled/index.html#pizza">Pizza's</a></li>
@@ -19,7 +19,7 @@
     </nav>
     <div>
         <a href="winkelmand.html">Winkelmandje</a>
-        <a href="login.html">Profiel</a>
+        <a href="login.php">Profiel</a>
     </div>
 </header>
 <main class="grid-2-col">
@@ -55,7 +55,7 @@
 <footer>
     <p>&copy; 2025 Pizzeria Sol Machina</p>
     <p>Adres:</p>
-    <a href="privacy.html">Privacy</a>
+    <a href="privacy.php">Privacy</a>
 </footer>
 </body>
 </html>
