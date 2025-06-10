@@ -36,6 +36,7 @@
             <button type="submit">Inloggen</button>
         </form>
     </section>
+
     <section class="register">
         <h2>Registreer</h2>
         <form action="login_script.php" method="POST">

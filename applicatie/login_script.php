@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
-        $address = $_POST['address'];
+        $address = sprintf("%s, %s %s", $_POST['address'], $_POST['postcode'], $_POST['plaats']);
         $role = $_POST['role'];
 
         $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, ?)");
