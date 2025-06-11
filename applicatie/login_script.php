@@ -19,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$username, $password, $first_name, $last_name, $address, $role]);
 
+        if ($stmt->rowCount() > 0) {
+            // Registratie succesvol
+            header('Location: login.php');
+            exit;
+        } else {
+            // Fout bij registratie
+        }
+
     } elseif (isset($_POST['login'])) {
         // Login
         $username = $_POST['username'];
