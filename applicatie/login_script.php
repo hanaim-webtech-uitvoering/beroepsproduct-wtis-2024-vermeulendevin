@@ -37,6 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
+            if (isset($_POST['remember'])) {
+                session_start();
+                $_SESSION['username'] = $username;
+                $_SESSION['logged_in'] = true;
+            }
             if ($user['role'] === 'customer') {
                 header('Location: index.php');
                 exit;
