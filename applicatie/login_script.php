@@ -5,17 +5,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = maakVerbinding();
 
     if (isset($_POST['register'])) {
-        // Registration
+        // Registratie
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
+        // Adresvelden combineren tot een enkele adresreeks
         $address = sprintf("%s, %s %s", $_POST['address'], $_POST['postcode'], $_POST['plaats']);
+
+        // Rol wordt nog verwijderd, en wordt ergens anders geimplementeerd.
         $role = $_POST['role'];
 
         $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$username, $password, $first_name, $last_name, $address, $role]);
-        echo "Registration successful!";
+
     } elseif (isset($_POST['login'])) {
         // Login
         $username = $_POST['username'];
@@ -34,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } else {
-            echo "Invalid username or password.";
+            // Ongeldige inloggegevens
         }
     }
 }
