@@ -1,5 +1,6 @@
 <?php
 require_once 'db_connectie.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = maakVerbinding();
@@ -29,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } elseif (isset($_POST['login'])) {
         // Login
-        $username = $_POST['username'];
+        $username = trim($_POST['username']);
         $password = $_POST['password'];
 
         $stmt = $conn->prepare("SELECT * FROM [User] WHERE username = ?");
@@ -37,11 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
-            if (isset($_POST['remember'])) {
-                session_start();
-                $_SESSION['username'] = $username;
-                $_SESSION['logged_in'] = true;
-            }
+
+            $_SESSION['username'] = $username;
+            $_SESSION['logged_in'] = true;
+            $_SESSION['role'] = $user['role'];
+
             if ($user['role'] === 'customer') {
                 header('Location: index.php');
                 exit;
