@@ -19,7 +19,18 @@
         </nav>
         <div>
             <a href="winkelmand.php">Winkelmandje</a>
-            <a href="login.php">Profiel</a>
+
+            <?php
+            if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+                echo '<a href="login.php">Login</a>';
+            } else {
+                if ($_SESSION['role'] === 'customer') {
+                    echo '<a href="klantprofiel.php">Profiel</a>';
+                } elseif ($_SESSION['role'] === 'employee') {
+                    echo '<a href="personeelsprofiel.php">Profiel</a>';
+                }
+            }
+            ?>
         </div>
     </header>
     <main>
