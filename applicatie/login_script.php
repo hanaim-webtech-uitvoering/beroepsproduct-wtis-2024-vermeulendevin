@@ -14,11 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Adresvelden combineren tot een enkele adresreeks
         $address = sprintf("%s, %s %s", $_POST['address'], $_POST['postcode'], $_POST['plaats']);
 
-        // Rol wordt nog verwijderd, en wordt ergens anders geimplementeerd.
-        $role = $_POST['role'];
-
-        $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$username, $password, $first_name, $last_name, $address, $role]);
+        $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, 'customer')");
+        $stmt->execute([$username, $password, $first_name, $last_name, $address]);
 
         if ($stmt->rowCount() > 0) {
             // Registratie succesvol

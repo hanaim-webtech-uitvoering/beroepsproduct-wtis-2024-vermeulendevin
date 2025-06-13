@@ -55,8 +55,6 @@
             <input type="text" id="reg-username" name="username" required>
             <label for="reg-password">Wachtwoord:</label>
             <input type="password" id="reg-password" name="password" required>
-            <label for="role">Rol:</label>
-            <input type="text" id="role" name="role" required>
             <button type="submit">Registreer</button>
         </form>
     </section>
