@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } else {
             // Fout bij registratie
+            echo "test";
         }
 
     } elseif (isset($_POST['login'])) {
