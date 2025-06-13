@@ -40,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['logged_in'] = true;
             $_SESSION['role'] = $user['role'];
 
+
+            // Verplaatsen naar ander script obv session role
             if ($user['role'] === 'customer') {
                 header('Location: index.php');
                 exit;
