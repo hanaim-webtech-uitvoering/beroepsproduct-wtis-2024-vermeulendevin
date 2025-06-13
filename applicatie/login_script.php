@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$username, $password, $first_name, $last_name, $address]);
 
         if ($stmt->rowCount() > 0) {
-            // Registratie succesvol
             header('Location: login.php');
             exit;
         } else {
-            // Fout bij registratie
-            echo "test";
+            $_SESSION['error'] = "Er is een fout opgetreden bij het registreren. Probeer het opnieuw.";
+            header('Location: login.php');
+            exit;
         }
 
     } elseif (isset($_POST['login'])) {
@@ -41,8 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['logged_in'] = true;
             $_SESSION['role'] = $user['role'];
 
-
-            // Verplaatsen naar ander script obv session role
             if ($user['role'] === 'customer') {
                 header('Location: index.php');
                 exit;
@@ -51,7 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } else {
-            // Ongeldige inloggegevens
+            $_SESSION['error'] = "Ongeldige gebruikersnaam of wachtwoord";
+            header('Location: login.php');
+            exit;
         }
     }
 }

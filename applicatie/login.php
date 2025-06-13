@@ -25,6 +25,13 @@
 <main class="grid-2-col">
     <section class="login">
         <h2>Login</h2>
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<div class="error-message" role="alert">' . htmlspecialchars($_SESSION['error']) . '</div>';
+            unset($_SESSION['error']);
+        }
+        ?>
         <form action="login_script.php" method="POST">
             <input type="hidden" name="login">
             <label for="login-username">Gebruikersnaam:</label>
