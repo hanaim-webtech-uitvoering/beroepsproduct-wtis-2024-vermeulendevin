@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS pizzeria;
+CREATE DATABASE pizzeria;
+USE pizzeria;
+
 -- Tabel: User
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'User')
 BEGIN
