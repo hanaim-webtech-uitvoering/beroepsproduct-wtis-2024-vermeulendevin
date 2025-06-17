@@ -47,13 +47,25 @@ session_start();
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza Margaritha</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="1">
+                    <input type="hidden" name="product_name" value="Pizza Margaritha">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
             <article class="menu-item">
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza Salami</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="2">
+                    <input type="hidden" name="product_name" value="Pizza Salami">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
             <article class="menu-item">
                 <img src="img/pizza.png" alt="Pizza">
