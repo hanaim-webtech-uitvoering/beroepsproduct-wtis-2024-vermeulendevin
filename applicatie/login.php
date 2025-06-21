@@ -19,7 +19,7 @@
     </nav>
     <div>
         <a href="winkelmand.php">Winkelmandje</a>
-        <a href="login.html">Profiel</a>
+        <a href="login.php">Profiel</a>
     </div>
 </header>
 <main class="grid-2-col">
