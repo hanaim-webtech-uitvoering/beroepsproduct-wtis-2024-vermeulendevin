@@ -10,6 +10,17 @@
 <body>
 <header>
     <a href="index.php">Pizzeria Sol Machina</a>
+    <nav>
+        <ul>
+            <li><a href="index.php#pizza">Pizza's</a></li>
+            <li><a href="index.php#dessert">Desserts</a></li>
+            <li><a href="index.php#drinken">Drinken</a></li>
+        </ul>
+    </nav>
+    <div>
+        <a href="winkelmand.php">Winkelmandje</a>
+        <a href="login.php">Profiel</a>
+    </div>
 </header>
 <main>
     <section class="privacy-policy">
@@ -50,7 +61,7 @@
 <footer>
     <p>&copy; 2025 Pizzeria Sol Machina</p>
     <p>Adres:</p>
-    <a href="privacy.html">Privacy</a>
+    <a href="privacy.php">Privacy</a>
 </footer>
 </body>
 </html>

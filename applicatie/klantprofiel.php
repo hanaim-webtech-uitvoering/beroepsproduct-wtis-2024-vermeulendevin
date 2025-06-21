@@ -12,9 +12,9 @@
     <a href="index.php">Pizzeria Sol Machina</a>
     <nav>
         <ul>
-            <li><a href="/untitled/index.html#pizza">Pizza's</a></li>
-            <li><a href="/untitled/index.html#dessert">Desserts</a></li>
-            <li><a href="/untitled/index.html#drinken">Drinken</a></li>
+            <li><a href="index.php#pizza">Pizza's</a></li>
+            <li><a href="index.php#dessert">Desserts</a></li>
+            <li><a href="index.php#drinken">Drinken</a></li>
         </ul>
     </nav>
     <div>
