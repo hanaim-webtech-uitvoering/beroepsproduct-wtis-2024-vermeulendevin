@@ -1,27 +1,6 @@
-<!doctype html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pizzeria Sol Machina</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <a href="index.php">Pizzeria Sol Machina</a>
-    <nav>
-        <ul>
-            <li><a href="index.php#pizza">Pizza's</a></li>
-            <li><a href="index.php#dessert">Desserts</a></li>
-            <li><a href="index.php#drinken">Drinken</a></li>
-        </ul>
-    </nav>
-    <div>
-        <a href="winkelmand.php">Winkelmandje</a>
-        <a href="login.php">Profiel</a>
-    </div>
-</header>
+<?php
+require_once 'header.php';
+?>
 <main class="grid-2-col">
     <section class="order-list">
         <h2>Geplaatste bestellingen:</h2>
@@ -67,10 +46,6 @@
         </article>
     </section>
 </main>
-<footer>
-    <p>&copy; 2025 Pizzeria Sol Machina</p>
-    <p>Adres:</p>
-    <a href="privacy.php">Privacy</a>
-</footer>
-</body>
-</html>
+<?php
+require_once 'footer.php';
+?>
