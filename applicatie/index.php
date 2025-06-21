@@ -1,5 +1,9 @@
 <?php
+session_start();
 require_once 'header.php';
+
+$header = getHeader($_SESSION);
+echo $header;
 ?>
     <main>
         <section class="hero">

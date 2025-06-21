@@ -1,6 +1,10 @@
 <?php
 session_start();
 require_once 'db_connectie.php';
+require_once 'header.php';
+
+$header = getHeader($_SESSION);
+echo $header;
 
 // 1. Ophalen van de data
 // maak verbinding met de database (zie db_connection.php)

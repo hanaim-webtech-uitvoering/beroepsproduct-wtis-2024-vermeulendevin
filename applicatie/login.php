@@ -1,11 +1,14 @@
 <?php
+session_start();
 require_once 'header.php';
+
+$header = getHeader($_SESSION);
+echo $header;
 ?>
 <main class="grid-2-col">
     <section class="login">
         <h2>Login</h2>
         <?php
-        session_start();
         if (isset($_SESSION['error'])) {
             echo '<div class="error-message" role="alert">' . htmlspecialchars($_SESSION['error']) . '</div>';
             unset($_SESSION['error']);
