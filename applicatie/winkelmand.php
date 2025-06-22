@@ -87,8 +87,72 @@ if (empty($cart_items)) {
     // Cart actions
     $cart_table = $cart_table . '<div class="cart-actions">
         <a href="index.php" class="button">Verder winkelen</a>
-        <a href="checkout.php" class="button">Afrekenen</a>
     </div>';
+}
+
+// Klantgegevens formulier
+$customer_form = '';
+if (!empty($cart_items)) {
+    $customer_form = '
+    <section class="customer-info">
+        <h2>Klantgegevens</h2>
+        <form action="process_order.php" method="POST" class="customer-form">
+            <div class="form-group">
+                <label for="firstname">Voornaam:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastname">Achternaam:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mailadres:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefoonnummer:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Adres:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="postal_code">Postcode:</label>
+                <input type="text" id="postal_code" name="postal_code" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="city">Plaats:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="payment_method">Betaalmethode:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="">Kies een betaalmethode</option>
+                    <option value="ideal">iDEAL</option>
+                    <option value="creditcard">Creditcard</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="banktransfer">Bankoverschrijving</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Opmerkingen (optioneel):</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="button checkout-button">Bestelling plaatsen</button>
+            </div>
+        </form>
+    </section>';
 }
 ?>
 
@@ -101,6 +165,9 @@ require_once 'header.php';
             <!-- 3. Weergeven van de data -->
             <?= $cart_table ?>
         </section>
+        
+        <!-- Klantgegevens formulier -->
+        <?= $customer_form ?>
     </main>
 <?php
 require_once 'footer.php';

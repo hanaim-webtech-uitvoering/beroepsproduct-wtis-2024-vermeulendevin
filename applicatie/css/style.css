@@ -356,3 +356,107 @@ input[name="plaats"] {
     width: 100%;
   }
 }
+
+/* Klantgegevens formulier styling */
+.customer-info {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.customer-info h2 {
+  margin-bottom: 1.5rem;
+  color: forestgreen;
+  text-align: center;
+}
+
+.customer-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:nth-child(8),
+.form-group:nth-child(9),
+.form-group:nth-child(10) {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: forestgreen;
+  box-shadow: 0 0 5px rgba(34, 139, 34, 0.3);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.checkout-button {
+  width: auto;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: forestgreen;
+  color: floralwhite;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #228b22;
+}
+
+/* Responsive design voor het formulier */
+@media (max-width: 768px) {
+  .customer-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:nth-child(8),
+  .form-group:nth-child(9),
+  .form-group:nth-child(10) {
+    grid-column: 1;
+  }
+
+  .customer-info {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
