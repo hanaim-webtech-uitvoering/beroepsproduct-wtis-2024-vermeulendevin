@@ -6,11 +6,8 @@ require_once 'header.php';
 $header = getHeader($_SESSION);
 echo $header;
 
-// 1. Ophalen van de data
-// maak verbinding met de database (zie db_connection.php)
 $db = maakVerbinding();
 
-// haal alle producten uit de winkelmand op
 $cart_items = [];
 $total = 0;
 
@@ -29,19 +26,14 @@ if (!empty($_SESSION['cart'])) {
     }
 }
 
-// 2. Renderen van de data
 if (empty($cart_items)) {
     $cart_table = '<p>Je winkelmandje is leeg.</p>';
 } else {
-    // Begin van de "table"
     $cart_table = '<table>';
-    // De "table heads"
     $cart_table = $cart_table . '<thead><tr><th>Product</th><th>Prijs</th><th>Aantal</th><th>Totaal</th><th>Acties</th></tr></thead>';
     
-    // Begin van de "table body"
     $cart_table = $cart_table . '<tbody>';
     
-    // Elke rij als een "table row"
     foreach($cart_items as $item) {
         $index = $item['index'];
         $name = htmlspecialchars($item['name']);
@@ -69,10 +61,8 @@ if (empty($cart_items)) {
         </tr>";
     }
     
-    // Eind van de "table body"
     $cart_table = $cart_table . '</tbody>';
     
-    // Table footer met totaal
     $totalFormatted = number_format($total, 2);
     $cart_table = $cart_table . "<tfoot>
         <tr>
@@ -81,16 +71,13 @@ if (empty($cart_items)) {
         </tr>
     </tfoot>";
     
-    // Eind van de "table"
     $cart_table = $cart_table . '</table>';
     
-    // Cart actions
     $cart_table = $cart_table . '<div class="cart-actions">
         <a href="index.php" class="button">Verder winkelen</a>
     </div>';
 }
 
-// Klantgegevens formulier
 $customer_form = '';
 if (!empty($cart_items)) {
     $customer_form = '
@@ -162,11 +149,9 @@ require_once 'header.php';
     <main>
         <section class="cart">
             <h1>Winkelmandje</h1>
-            <!-- 3. Weergeven van de data -->
             <?= $cart_table ?>
         </section>
         
-        <!-- Klantgegevens formulier -->
         <?= $customer_form ?>
     </main>
 <?php
