@@ -39,25 +39,49 @@ echo $header;
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza Pollo</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="3">
+                    <input type="hidden" name="product_name" value="Pizza Pollo">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
             <article class="menu-item">
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza Quattro Formaggi</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                    <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="4">
+                    <input type="hidden" name="product_name" value="Pizza Quattro Formaggi">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
             <article class="menu-item">
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza BBQ & Chicken</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="5">
+                    <input type="hidden" name="product_name" value="Pizza BBQ & Chicken">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
             <article class="menu-item">
                 <img src="img/pizza.png" alt="Pizza">
                 <h3>Pizza Shoarma</h3>
                 <span>€9,99</span>
-                <button>Voeg toe</button>
+                <form action="add_to_cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="6">
+                    <input type="hidden" name="product_name" value="Pizza Shoarma">
+                    <input type="hidden" name="product_price" value="9.99">
+                    <input type="hidden" name="product_type" value="pizza">
+                    <button type="submit">Voeg toe</button>
+                </form>
             </article>
         </section>
         <section id="dessert" class="menu">
