@@ -3,7 +3,7 @@ require_once 'db_connectie.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $conn = maakVerbinding();
+    $db = maakVerbinding();
 
     if (isset($_POST['register'])) {
         // Registratie
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Adresvelden combineren tot een enkele adresreeks
         $address = sprintf("%s, %s %s", $_POST['address'], $_POST['postcode'], $_POST['plaats']);
 
-        $stmt = $conn->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, 'customer')");
+        $stmt = $db->prepare("INSERT INTO [User] (username, password, first_name, last_name, address, role) VALUES (?, ?, ?, ?, ?, 'customer')");
         $stmt->execute([$username, $password, $first_name, $last_name, $address]);
 
         if ($stmt->rowCount() > 0) {
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = trim($_POST['username']);
         $password = $_POST['password'];
 
-        $stmt = $conn->prepare("SELECT * FROM [User] WHERE username = ?");
+        $stmt = $db->prepare("SELECT * FROM [User] WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
