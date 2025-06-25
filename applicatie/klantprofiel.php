@@ -1,5 +1,9 @@
 <?php
+session_start();
 require_once 'header.php';
+
+$header = getHeader($_SESSION);
+echo $header;
 ?>
 <main class="grid-2-col">
     <section class="order-list">
